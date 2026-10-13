@@ -1,23 +1,25 @@
-import InfinitePhotoSlider from '@/src/Event/Photogallerytemplate'
-import EngagementGallery from '@/src/packagess/engagement/engagementGallery'
-import EngagementShoot from '@/src/packagess/engagement/engagementshoot'
-import EngagementIntro from '@/src/packagess/engagement/Intro'
-import StarfieldCursor from '@/src/StarFieldCursor'
-import React from 'react'
 
-const page = () => {
-  return (
-   <>
-   <div className='bg-black'>
-   
-   <EngagementIntro/>
-   <EngagementGallery/>
-   <EngagementShoot/>
-   <InfinitePhotoSlider/>
-   </div>
-   
-   </>
-  )
+import EngagementClient from "@/src/packagess/engagement/EngagementClient";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Engagement Photography Packages",
+  description:
+    "Explore customized engagement photography packages with SingleKey Photography. Professional coverage for ring exchange ceremonies, couple portraits, and family celebrations.",
+  alternates: {
+    canonical: "https://singlekey-eta.vercel.app/packages/engagement",
+  },
+  openGraph: {
+    title: "Engagement Photography Packages | SingleKey Photography",
+    description:
+      "Affordable and elegant engagement photography packages to capture your special ring ceremony and traditional rituals.",
+    url: "https://singlekey-eta.vercel.app/packages/engagement",
+    siteName: "SingleKey Photography",
+    type: "website",
+    locale: "en_IN",
+  },
+};
+
+export default function Page() {
+  return <EngagementClient />;
 }
-
-export default page

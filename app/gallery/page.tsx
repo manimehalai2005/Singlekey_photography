@@ -1,25 +1,25 @@
-import AboutUs from "@/src/Gallery/About";
-import ArtisticCollage from "@/src/Gallery/ArticleCollege";
-import InteriorGallery from "@/src/Gallery/Introgallery";
-import PolaroidsFamilyCollage from "@/src/Gallery/PolaridFamilyGallery";
-import StarfieldCursor from "@/src/StarFieldCursor";
 
+import GalleryClient from "@/src/Gallery/GalleryClient";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Photo Gallery",
+  description:
+    "Explore our extensive photography portfolio at SingleKey Photography. View our finest collections of weddings, pre-wedding shoots, events, portraits, and traditional celebrations.",
+  alternates: {
+    canonical: "https://singlekey-eta.vercel.app/gallery",
+  },
+  openGraph: {
+    title: "Photo Gallery | SingleKey Photography",
+    description:
+      "Explore high-quality photography portfolios covering weddings, traditional events, portraits, and special celebrations.",
+    url: "https://singlekey-eta.vercel.app/gallery",
+    siteName: "SingleKey Photography",
+    type: "website",
+    locale: "en_IN",
+  },
+};
 
 export default function Page() {
-  return (
-    <main className="relative bg-black min-h-screen text-white">
-    
-      <StarfieldCursor />
-
-    
-      <div className="relative z-10">
-        <div className="bg-black">
-          <InteriorGallery />
-        </div>
-        <AboutUs />   
-     
-        <PolaroidsFamilyCollage />
-      </div>
-    </main>
-  );
+  return <GalleryClient />;
 }

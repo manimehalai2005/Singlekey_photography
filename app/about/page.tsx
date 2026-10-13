@@ -1,27 +1,25 @@
-import PhotographyAboutPage from "@/src/About/Aboutusintro";
-import WhyChooseUsSection from "@/src/About/ChooseusSection";
-import PhotographyPortfolioTemplate from "@/src/About/mainsecondsection";
-import MissionVisionSection from "@/src/About/MissionVisionSection";
-import WhatICaptureSection from "@/src/About/Thridsection";
-import StarfieldCursor from "@/src/StarFieldCursor";
+
+import AboutClient from "@/src/About/AboutClient";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About Us",
+  description:
+    "Learn more about SingleKey Photography. Discover our passion, experience, and dedication to capturing unforgettable moments, weddings, and traditional celebrations with artistic excellence.",
+  alternates: {
+    canonical: "https://singlekey-eta.vercel.app/about",
+  },
+  openGraph: {
+    title: "About Us | SingleKey Photography",
+    description:
+      "Discover the story, passion, and expertise behind SingleKey Photography.",
+    url: "https://singlekey-eta.vercel.app/about",
+    siteName: "SingleKey Photography",
+    type: "website",
+    locale: "en_IN",
+  },
+};
 
 export default function Page() {
-  return (
-    <main className="relative min-h-screen bg-black text-white">
-     
-      <div className="fixed inset-0 pointer-events-none z-0">
-        <StarfieldCursor />
-      </div>
-
-      
-      <div className="relative z-10 bg-transparent">
-        <PhotographyAboutPage />
-        <PhotographyPortfolioTemplate />
-        <WhatICaptureSection />
-       
-        <WhyChooseUsSection />
-       
-      </div>
-    </main>
-  );
+  return <AboutClient />;
 }

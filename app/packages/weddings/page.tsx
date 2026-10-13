@@ -1,24 +1,25 @@
 
-import InfinitePhotoSlider from "@/src/Event/Photogallerytemplate"
-import AboutUsPage from "@/src/packagess/weddings/About"
-import FashionTemplate from "@/src/packagess/weddings/intro"
-import WeddingEvents from "@/src/packagess/weddings/Weddingevents"
-import StarfieldCursor from "@/src/StarFieldCursor"
+import WeddingPackageClient from "@/src/packagess/weddings/WeddingPackageClient";
+import type { Metadata } from "next";
 
+export const metadata: Metadata = {
+  title: "Wedding Photography Packages",
+  description:
+    "Explore comprehensive wedding photography packages with SingleKey Photography. Professional coverage for wedding ceremonies, receptions, pre-wedding, and candid moments with custom pricing.",
+  alternates: {
+    canonical: "https://singlekey-eta.vercel.app/packages/wedding",
+  },
+  openGraph: {
+    title: "Wedding Photography Packages | SingleKey Photography",
+    description:
+      "Affordable and premium wedding photography packages to capture every unforgettable moment of your big day.",
+    url: "https://singlekey-eta.vercel.app/packages/wedding",
+    siteName: "SingleKey Photography",
+    type: "website",
+    locale: "en_IN",
+  },
+};
 
-const page = () => {
-  return (
- <>
- <div className="bg-black">
- 
-<FashionTemplate/>
-<AboutUsPage/>
-<WeddingEvents/>
-<InfinitePhotoSlider/>
-</div>
-</>
-  
-  )
+export default function Page() {
+  return <WeddingPackageClient />;
 }
-
-export default page

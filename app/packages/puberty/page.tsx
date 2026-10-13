@@ -1,24 +1,25 @@
 
-import InfinitePhotoSlider from '@/src/Event/Photogallerytemplate'
-import PubertyCeremonyVisionBoard from '@/src/Event/puberty/Pubertyceremony'
-import PuberityCeremonyShoot from '@/src/packagess/puberty/pubertycermonyshoot'
-import PubertyGallery from '@/src/packagess/puberty/pubertyGallery'
-import PubertyIntro from '@/src/packagess/puberty/pubertyintro'
-import StarfieldCursor from '@/src/StarFieldCursor'
-import React from 'react'
+import PubertyPackageClient from "@/src/packagess/puberty/PubertyPackageClient";
+import type { Metadata } from "next";
 
-const page = () => {
-  return (
-   <>
-   <div className='bg-black'>
-  
-   <PubertyIntro/>
-   <PubertyCeremonyVisionBoard/>
-   <PuberityCeremonyShoot/>
-   <InfinitePhotoSlider/>
-   </div>
-   </>
-  )
+export const metadata: Metadata = {
+  title: "Puberty Ceremony Photography Packages",
+  description:
+    "Explore traditional puberty ceremony photography packages with SingleKey Photography. Professional coverage for milestone celebrations, traditional rituals, and cherished family memories.",
+  alternates: {
+    canonical: "https://singlekey-eta.vercel.app/packages/puberty",
+  },
+  openGraph: {
+    title: "Puberty Ceremony Photography Packages | SingleKey Photography",
+    description:
+      "Affordable and professional photography packages for traditional puberty ceremonies, family functions, and special cultural celebrations.",
+    url: "https://singlekey-eta.vercel.app/packages/puberty",
+    siteName: "SingleKey Photography",
+    type: "website",
+    locale: "en_IN",
+  },
+};
+
+export default function Page() {
+  return <PubertyPackageClient />;
 }
-
-export default page
