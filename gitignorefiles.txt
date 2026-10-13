@@ -1,0 +1,12 @@
+node_modules/
+.next/
+out/
+dist/
+build/
+.turbo/
+.vercel/
+coverage/
+.env
+.env.*
+!.env.example
+*.log
