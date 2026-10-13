@@ -237,7 +237,6 @@ export default function StarfieldCursor() {
 
     resize();
 
-    window.addEventListener("resize", resize); // Note: ensure correct event type below
     window.addEventListener("resize", resize);
     window.addEventListener("mousemove", onMove);
     window.addEventListener("mouseleave", onLeave);
@@ -264,7 +263,7 @@ export default function StarfieldCursor() {
         width: "100%",
         height: "100%",
         pointerEvents: "none",
-        zIndex: 0, // இமேஜ்களுக்கு பின்னால் பேக்ராவுண்டாக இருக்க zIndex 0 கொடுக்கப்பட்டுள்ளது
+        zIndex: -1,
       }}
     />
   );

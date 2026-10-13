@@ -58,15 +58,13 @@ export default function Footer() {
   const picture = "./public/images/genzzilogoblack.jpeg";
 
   return (
-    <footer className="w-full bg-black text-orange-400 py-16 px-6 md:px-30 overflow-hidden">
-      <div className="max-w-8xl mx-auto">
-        
-        {/* Main Footer Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 pb-16">
+    <footer className="w-full bg-black text-orange-400 py-16 px-6 md:px-20 overflow-hidden">
+      <div className="max-w-8xl bg-black mx-auto">
+        <div className="grid grid-cols-1 bg-black md:grid-cols-2 lg:grid-cols-5 gap-2 pb-16">
           
           {/* Column 1: Brand Info & Status */}
           <div className="lg:col-span-1 space-y-6">
-            <div className="flex items-center space-x-1">
+            <div className="flex items-center space-x-2">
               <div className="flex items-center">
                 <Link href="/" className="text-2xl font-bold text-white tracking-tight">
                   <img

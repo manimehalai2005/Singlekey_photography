@@ -47,7 +47,7 @@ export default function ExploreGallery() {
   const loopItems = [...galleryItems, ...galleryItems, ...galleryItems];
 
   return (
-    <section className="bg-black text-zinc-900 font-sans w-full py-16 px-4 sm:px-8 overflow-hidden">
+    <section className="bg-transparent text-zinc-900 font-sans w-full py-16 px-4 sm:px-8 overflow-hidden">
       <div className="max-w-[1200px] mx-auto text-center">
         
     

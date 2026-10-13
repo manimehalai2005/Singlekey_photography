@@ -34,7 +34,7 @@ export default function WhatICaptureSection() {
   }, []);
 
   return (
-    <section className="w-full bg-black text-white font-sans antialiased overflow-hidden">
+    <section className="w-full bg-transparent text-white font-sans antialiased overflow-hidden">
       
       <style jsx>{`
         @keyframes slowMove {

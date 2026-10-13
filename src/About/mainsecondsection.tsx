@@ -75,7 +75,7 @@ export default function PhotographyPortfolioTemplate() {
   ];
 
   return (
-    <div className="bg-black text-[#1A1A1A] font-sans antialiased selection:bg-amber-100 overflow-x-hidden">
+    <div className="bg-transparent text-[#1A1A1A] font-sans antialiased selection:bg-amber-100 overflow-x-hidden">
       {/* Main Container Layout */}
       <main className="px-6 pt-6 pb-20">
         

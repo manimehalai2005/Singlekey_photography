@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion, Variants } from 'framer-motion';
 import ArtisticCollage from './ArticleCollege';
+import StarfieldCursor from '../StarFieldCursor';
 
 const AnimatedText = ({ 
   text, 
@@ -67,6 +68,7 @@ const AnimatedText = ({
 export default function AboutUs() {
   return (
     <>
+    <StarfieldCursor/>
     <div className="w-full bg-transparent flex items-center justify-center p-6 relative overflow-hidden font-sans">
 
       {/* Main Container Card */}

@@ -23,27 +23,24 @@ const bottomRowImages = [
 
 export default function InfinitePhotoSlider() {
   return (
-    <section className="relative w-full mx-auto bg-transparent text-white py-20 overflow-hidden flex flex-col justify-center gap-10">
+    <section className="relative w-full mx-auto bg-transparent text-white py-12 md:py-20 overflow-hidden flex flex-col justify-center gap-6 md:gap-10">
       
-      {/* Section Title */}
-      
-
       {/* --- TOP ROW: Moving Left --- */}
-      <div className="relative mx-auto w-full max-auto overflow-hidden flex">
+      <div className="relative mx-auto w-full overflow-hidden flex">
         <motion.div
-          className="flex gap-6 shrink-0"
+          className="flex gap-4 md:gap-6 shrink-0"
           animate={{ x: ['0%', '-50%'] }}
           transition={{
             repeat: Infinity,
             ease: 'linear',
-            duration: 25, // Speed control (Kooduthal seconds = Romba slow-a move aagum)
+            duration: 25,
           }}
         >
           {/* Duplicate array for seamless infinite looping */}
           {[...topRowImages, ...topRowImages].map((src, index) => (
             <div
               key={`top-${index}`}
-              className="relative w-64 h-44 sm:w-80 sm:h-52 rounded-2xl overflow-hidden border border-neutral-800 bg-neutral-900 shadow-2xl shrink-0"
+              className="relative w-48 h-32 sm:w-64 sm:h-44 md:w-80 md:h-52 rounded-2xl overflow-hidden border border-neutral-800 bg-neutral-900 shadow-2xl shrink-0"
             >
               <img
                 src={src}
@@ -56,21 +53,21 @@ export default function InfinitePhotoSlider() {
       </div>
 
       {/* --- BOTTOM ROW: Moving Right --- */}
-      <div  className="relative w-full mx-auto overflow-hidden flex">
+      <div className="relative w-full mx-auto overflow-hidden flex">
         <motion.div
-          className="flex gap-6 shrink-0"
+          className="flex gap-4 md:gap-6 shrink-0"
           animate={{ x: ['-50%', '0%'] }}
           transition={{
             repeat: Infinity,
             ease: 'linear',
-            duration: 28, // Speed control for bottom row
+            duration: 28,
           }}
         >
           {/* Duplicate array for seamless infinite looping */}
           {[...bottomRowImages, ...bottomRowImages].map((src, index) => (
             <div
               key={`bottom-${index}`}
-              className="relative w-64 h-44 sm:w-80 sm:h-52 rounded-2xl overflow-hidden border border-neutral-800 bg-neutral-900 shadow-2xl shrink-0"
+              className="relative w-48 h-32 sm:w-64 sm:h-44 md:w-80 md:h-52 rounded-2xl overflow-hidden border border-neutral-800 bg-neutral-900 shadow-2xl shrink-0"
             >
               <img
                 src={src}

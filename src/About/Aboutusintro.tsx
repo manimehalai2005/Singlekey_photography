@@ -71,7 +71,7 @@ export default function PhotographyAboutPage() {
   const letters = Array.from(headingText);
 
   return (
-    <div className="w-full bg-black text-slate-800 font-sans overflow-x-hidden">
+    <div className="w-full bg-transparent text-slate-800 font-sans overflow-x-hidden">
       {/* Hero Section - Full Width */}
       <section className="relative overflow-hidden">
         <div className="w-full pt-10 px-4 sm:px-6 lg:px-8 text-center">

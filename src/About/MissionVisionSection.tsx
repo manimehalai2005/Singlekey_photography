@@ -66,7 +66,7 @@ const AnimatedText = ({
 
 export default function MissionVisionSection() {
   return (
-    <section className="w-full bg-black text-white py-24 px-6 lg:px-16 font-sans overflow-hidden">
+    <section className="w-full bg-transparent text-white py-24 px-6 lg:px-16 font-sans overflow-hidden">
       <div className="max-w-8xl mx-auto space-y-20">
         
         {/* Section Header */}

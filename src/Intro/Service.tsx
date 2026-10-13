@@ -229,7 +229,7 @@ export default function PhotographyServicesSection() {
         
       </main>
 
-      <div className='bg-black'>
+      <div className='bg-transparent'>
         <ClientGallery />
         <Mainchooseus />
         <Chooseus />

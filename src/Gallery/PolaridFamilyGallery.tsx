@@ -33,7 +33,7 @@ export default function PolaroidsFamilyCollage() {
   return (
     <>
     
-    <div className="bg-black text-stone-800  p-4 mx-auto flex flex-col items-center justify-center font-sans overflow-hidden">
+    <div className="bg-transparent text-stone-800  p-4 mx-auto flex flex-col items-center justify-center font-sans overflow-hidden">
       <div className="w-full  relative overflow-hidden">
         
         {/* Background Atmosphere Overlay */}

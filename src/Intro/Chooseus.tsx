@@ -76,7 +76,7 @@ export default function FeaturedStoriesSection() {
   }, [rotation]);
 
   return (
-    <section className="bg-black text-zinc-900 font-sans w-full min-h-screen py-12 px-4 sm:px-8 lg:px-16 overflow-hidden flex items-center">
+    <section className="bg-transparent text-zinc-900 font-sans w-full min-h-screen py-12 px-4 sm:px-8 lg:px-16 overflow-hidden flex items-center">
       <div className="w-full  grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         
         {/* Left Side: 3D Rotating Carousel with Framer Motion */}

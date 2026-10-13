@@ -5,6 +5,7 @@ import AosProvider from "@/src/Provider/Aos";
 import Navbar from "@/src/Navbar/Navbar";
 import Footer from "@/src/Footer/Footer";
 
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -30,7 +31,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <AosProvider/>
         <Navbar/>
         {children}
-        <Footer/>
+   <div className="relative z-20 bg-black">
+        <Footer />
+      </div>
         </body>
     </html>
   );

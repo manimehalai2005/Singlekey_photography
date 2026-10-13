@@ -1,18 +1,25 @@
-
-
 import Footer from '@/src/Footer/Footer'
 import PhotoAboutSection from '@/src/Intro/Aboutslide'
 import HeroSection from '@/src/Intro/Heroslide'
-import ClientGallery from '@/src/Intro/mainChoosuspage'
-import PhotographyServicesSection from '@/src/Intro/Service'
-import ExploreGallery from '@/src/Intro/SpreadPage'
+import StarfieldCursor from '@/src/StarFieldCursor'
+
 import React from 'react'
 
 const page = () => {
   return (
-    <div className='bg-black'>
-      <HeroSection/>
-      <PhotoAboutSection/>
+    <div className='relative min-h-screen bg-black text-white'>
+      
+     
+      <div className="fixed inset-0 pointer-events-none z-0">
+        <StarfieldCursor />
+      </div>
+
+      
+      <div className="relative z-10 bg-transparent">
+        <HeroSection />
+        <PhotoAboutSection />
+      </div>
+      
     </div>
   )
 }

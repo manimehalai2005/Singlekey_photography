@@ -30,7 +30,7 @@ export default function FeaturedStoriesSection() {
   ];
 
   return (
-    <section className="bg-black text-zinc-900 font-sans w-full  sm:px-8 lg:px-16 overflow-hidden flex items-center">
+    <section className="bg-transparent text-zinc-900 font-sans w-full  sm:px-8 lg:px-16 overflow-hidden flex items-center">
      
         
         {/* Left Side: Circular Gallery WebGL Component */}
