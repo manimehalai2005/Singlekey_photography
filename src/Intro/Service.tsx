@@ -13,7 +13,7 @@ export default function PhotographyServicesSection() {
   // Safe scroll handler for horizontal slider controls
   const handleScroll = (direction: 'left' | 'right') => {
     if (sliderRef.current) {
-      const scrollAmount = direction === 'left' ? -380 : 380;
+      const scrollAmount = direction === 'left' ? -280 : 280;
       sliderRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
     }
   };
@@ -77,7 +77,7 @@ export default function PhotographyServicesSection() {
 
   return (
     <>
-      <main className="relative w-full bg-transparent text-white flex items-center justify-center sm:p-8 antialiased overflow-hidden font-sans">
+      <main className="relative w-full bg-transparent text-white flex items-center justify-center p-4 sm:p-8 antialiased overflow-hidden font-sans">
         
         {/* Custom Keyframe Styles */}
         <style dangerouslySetInnerHTML={{ __html: `
@@ -90,9 +90,9 @@ export default function PhotographyServicesSection() {
         <div className="absolute -left-20 -top-20 w-80 h-80 rounded-full blur-3xl pointer-events-none" />
 
         {/* Outer Sleek Card Container - Fully Transparent */}
-        <div className="relative w-full bg-transparent rounded-[2.5rem] p-6 sm:p-12">
+        <div className="relative w-full bg-transparent rounded-[2rem] sm:rounded-[2.5rem] p-2 sm:p-12">
           
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center relative z-10">
             
             {/* Left Side: Headings & Action Button */}
             <motion.div 
@@ -100,28 +100,47 @@ export default function PhotographyServicesSection() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="lg:col-span-4 flex flex-col justify-between space-y-8"
+              className="lg:col-span-4 flex flex-col justify-between space-y-6 sm:space-y-8"
             >
               <div>
-               
-                <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-orange-200 leading-[1.1] mb-6">
-                  Our main areas <br />of work
+                <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-orange-200 leading-[1.15] mb-4 sm:mb-6">
+                  Our main areas <br className="hidden sm:inline" />of work
                 </h2>
 
-                <p className="text-amber-200/80 text-sm sm:text-base leading-relaxed max-w-sm font-medium">
+                <p className="text-amber-200/80 text-xs sm:text-base leading-relaxed max-w-sm font-medium">
                   From conceptual storytelling to high-end cinematic delivery, we provide tailored photography services that capture the heartbeat of your moments.
                 </p>
               </div>
 
-              <div>
+              <div className="flex items-center justify-between sm:justify-start gap-4">
                 <button 
                   type="button"
                   onClick={() => handleScroll('right')}
-                  className="group inline-flex items-center space-x-3 text-orange-300  transition-all duration-300 px-7 py-3.5 rounded-full font-semibold text-sm shadow-lg active:scale-95 cursor-pointer"
+                  className="group inline-flex items-center space-x-2 sm:space-x-3 text-orange-300 transition-all duration-300 px-5 sm:px-7 py-3 sm:py-3.5 rounded-full font-semibold text-xs sm:text-sm shadow-lg active:scale-95 cursor-pointer border border-orange-300/20 bg-neutral-900/40 backdrop-blur-md"
                 >
-                  <span>click me</span>
-                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                  <span>Explore All Services</span>
+                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1 text-amber-400" />
                 </button>
+
+                {/* Mobile Navigation Arrows (Visible only on mobile screen for fast access) */}
+                <div className="flex items-center space-x-2 sm:hidden">
+                  <button 
+                    type="button"
+                    onClick={() => handleScroll('left')} 
+                    className="p-2.5 rounded-full bg-neutral-900/80 border border-neutral-800 text-amber-200 active:scale-90"
+                    title="Slide Left"
+                  >
+                    <ChevronLeft className="w-4 h-4" />
+                  </button>
+                  <button 
+                    type="button"
+                    onClick={() => handleScroll('right')} 
+                    className="p-2.5 rounded-full bg-neutral-900/80 border border-neutral-800 text-amber-200 active:scale-90"
+                    title="Slide Right"
+                  >
+                    <ChevronRight className="w-4 h-4" />
+                  </button>
+                </div>
               </div>
             </motion.div>
 
@@ -134,8 +153,8 @@ export default function PhotographyServicesSection() {
               className="lg:col-span-8 flex flex-col space-y-4"
             >
               
-              {/* Slider Control Header */}
-              <div className="flex items-center justify-between px-1">
+              {/* Slider Control Header (Desktop Only Controls) */}
+              <div className="hidden sm:flex items-center justify-between px-1">
                 <span className="text-xs font-medium text-amber-200 uppercase tracking-wider">
                   Explore Services Showcase
                 </span>
@@ -143,7 +162,7 @@ export default function PhotographyServicesSection() {
                   <button 
                     type="button"
                     onClick={() => handleScroll('left')} 
-                    className="p-2 rounded-full bg-neutral-900 hover:bg-neutral-800 text-amber-200 transition  cursor-pointer"
+                    className="p-2 rounded-full bg-neutral-900 hover:bg-neutral-800 text-amber-200 transition cursor-pointer"
                     title="Slide Left"
                   >
                     <ChevronLeft className="w-4 h-4" />
@@ -162,7 +181,7 @@ export default function PhotographyServicesSection() {
               {/* Flex Container for Horizontal Fast Scroll */}
               <div 
                 ref={sliderRef}
-                className="flex gap-5 overflow-x-auto no-scrollbar scroll-smooth pb-8 pt-4 items-stretch"
+                className="flex gap-4 sm:gap-5 overflow-x-auto no-scrollbar scroll-smooth snap-x snap-mandatory pb-6 pt-2 items-stretch"
               >
                 {services.map((service, index) => (
                   <motion.div 
@@ -170,9 +189,8 @@ export default function PhotographyServicesSection() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    /* Floating Water Wave Vertical Animation for Each Card */
                     animate={{
-                      y: [0, -8, 0, 8, 0],
+                      y: [0, -6, 0, 6, 0],
                     }}
                     transition={{
                       y: {
@@ -183,7 +201,7 @@ export default function PhotographyServicesSection() {
                       },
                       opacity: { duration: 0.5 },
                     }}
-                    className="min-w-[280px] sm:min-w-[320px] max-w-[320px] flex-shrink-0 border border-neutral-800/80 rounded-3xl p-6 flex flex-col justify-between h-[380px] transition-all duration-500 hover:shadow-2xl hover:border-amber-300/50 group relative overflow-hidden cursor-pointer"
+                    className="w-[82vw] sm:w-[320px] min-w-[82vw] sm:min-w-[320px] max-w-[320px] flex-shrink-0 snap-center border border-neutral-800/80 rounded-2xl sm:rounded-3xl p-5 sm:p-6 flex flex-col justify-between h-[340px] sm:h-[380px] transition-all duration-500 hover:shadow-2xl hover:border-amber-300/50 group relative overflow-hidden cursor-pointer"
                   >
                     {/* Floating Water Wave Background Image Overlay */}
                     <motion.div
@@ -203,14 +221,16 @@ export default function PhotographyServicesSection() {
                     {/* Gradient Overlay for Readable Text */}
                     <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/60 to-black/90 pointer-events-none" />
 
-                    {/* Card Top: Number Index */}
+                    {/* Card Top: Number Index Tag */}
                     <div className="flex items-center justify-between relative z-10">
-                     
+                      <span className="text-xs font-bold text-amber-300/90 bg-neutral-950/60 backdrop-blur-md px-2.5 py-1 rounded-full border border-neutral-800">
+                        {service.id}
+                      </span>
                     </div>
 
                     {/* Card Bottom: Title & Description */}
-                    <div className="relative z-10 space-y-2">
-                      <h3 className="text-xl font-bold text-amber-200 group-hover:text-amber-300 transition-colors">
+                    <div className="relative z-10 space-y-1.5 sm:space-y-2">
+                      <h3 className="text-lg sm:text-xl font-bold text-amber-200 group-hover:text-amber-300 transition-colors">
                         {service.title}
                       </h3>
                       <p className="text-xs sm:text-sm line-clamp-3 leading-relaxed text-orange-200/90 font-medium">

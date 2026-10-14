@@ -35,7 +35,17 @@ export default function PolaroidsFamilyCollage() {
     
     <div className="bg-transparent text-stone-800  p-4 mx-auto flex flex-col items-center justify-center font-sans overflow-hidden">
       <div className="w-full  relative overflow-hidden">
-        
+
+       <motion.p 
+            initial={{ opacity: 0, y: -50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1 }}
+            className='text-amber-200 text-center text-4xl font-sans italic'
+          >
+            Album
+          </motion.p>
+
         {/* Background Atmosphere Overlay */}
         <div className="absolute inset-0 opacity-15 bg-[radial-gradient(#d6d3d1_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none"></div>
 
@@ -48,15 +58,7 @@ export default function PolaroidsFamilyCollage() {
             </svg>
           </div>
           
-          <motion.p 
-            initial={{ opacity: 0, y: -50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1 }}
-            className='text-amber-200 text-center text-4xl font-sans italic'
-          >
-            Album
-          </motion.p>
+        
 
           <div className="hidden md:flex text-stone-300 animate-pulse">
             <svg className="w-10 h-10 transform rotate-45" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2">

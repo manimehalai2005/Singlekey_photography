@@ -76,16 +76,36 @@ export default function FeaturedStoriesSection() {
   }, [rotation]);
 
   return (
-    <section className="bg-transparent text-zinc-900 font-sans w-full min-h-screen py-12 px-4 sm:px-8 lg:px-16 overflow-hidden flex items-center">
-      <div className="w-full  grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    <section className="bg-transparent text-zinc-900 font-sans w-full py-12 px-4 sm:px-8 lg:px-16 overflow-hidden flex items-center">
+      <div className="w-full sm:mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         
-        {/* Left Side: 3D Rotating Carousel with Framer Motion */}
+
+{/* right */}
+         <motion.div 
+          initial={{ opacity: 0, x: 40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="flex flex-col justify-center text-center  lg:text-left"
+        >
+          <span className="text-xs font-bold tracking-widest  text-amber-300 uppercase mb-3">
+            BEHIND THE LENS
+          </span>
+          
+          <h2 className="text-2xl md:text-5xl font-sans italic text-amber-300 font-black tracking-tight leading-tight mb-6">
+            Every Moment Has a Story. <br />
+          </h2>
+          <p className="text-sm md:text-base text-orange-200 leading-relaxed mb-6 font-medium font-sans italic text-center lg:text-left max-w-md lg:max-w-none mx-auto lg:mx-0 px-4 sm:px-0">
+  At SingleKey Photography, we believe that the most beautiful memories are found in genuine emotions and unforgettable moments. From the excitement of a wedding day to the quiet connection between two people, we capture every moment with creativity, care, and attention to detail.
+</p>
+        </motion.div>
+        {/* 3D Rotating Carousel for both Mobile and Desktop (Centered & Scaled for Mobile) */}
         <motion.div 
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.9, ease: "easeOut" }}
-          className="relative flex h-[550px] w-full items-center justify-center [perspective:1400px]"
+          className="relative flex h-[320px] sm:h-[550px] w-full items-center justify-center [perspective:1400px] mx-auto scale-90 sm:scale-100"
         >
           <motion.div
             className="relative flex h-full w-full items-center justify-center"
@@ -99,14 +119,17 @@ export default function FeaturedStoriesSection() {
                 (r) => r + angle
               );
 
+              // Smaller radius for mobile (180px) and standard for desktop (300px)
+              const radius = 240;
+
               const x = useTransform(
                 itemRotation,
-                (r) => Math.sin((r * Math.PI) / 180) * 300
+                (r) => Math.sin((r * Math.PI) / 180) * radius
               );
 
               const z = useTransform(
                 itemRotation,
-                (r) => Math.cos((r * Math.PI) / 180) * 300
+                (r) => Math.cos((r * Math.PI) / 180) * radius
               );
 
               const rotateY = useTransform(itemRotation, (r) => r);
@@ -114,11 +137,11 @@ export default function FeaturedStoriesSection() {
               return (
                 <motion.div
                   key={item.id}
-                  className="absolute h-[340px] w-[240px] overflow-hidden rounded-3xl border border-amber-300/20 bg-zinc-900 shadow-2xl flex flex-col justify-between"
+                  className="absolute h-[280px] sm:h-[340px] w-[190px] sm:w-[240px] overflow-hidden rounded-3xl border border-amber-300/20 bg-zinc-900 shadow-2xl flex flex-col justify-between"
                   initial={{ x: 0, z: 0, scale: 0.5, opacity: 0.5 }}
                   animate={{
-                    x: [0, Math.sin((angle * Math.PI) / 180) * 300],
-                    z: [0, Math.cos((angle * Math.PI) / 180) * 300],
+                    x: [0, Math.sin((angle * Math.PI) / 180) * radius],
+                    z: [0, Math.cos((angle * Math.PI) / 180) * radius],
                     scale: [0.5, 1],
                     opacity: [0.5, 1],
                   }}
@@ -135,39 +158,14 @@ export default function FeaturedStoriesSection() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
                   </div>
-
-                  {/* Card Header Info */}
-                
-
-                  {/* Card Content & View Album CTA */}
-               
                 </motion.div>
               );
             })}
           </motion.div>
         </motion.div>
 
-        {/* Right Side: Content & Story with Framer Motion & Updated Colors */}
-        <motion.div 
-          initial={{ opacity: 0, x: 40 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="flex flex-col justify-center"
-        >
-          <span className="text-xs font-bold tracking-widest text-amber-300 uppercase mb-3">
-            BEHIND THE LENS
-          </span>
-          
-          <h2 className="text-3xl md:text-5xl font-sans italic text-amber-300 font-black tracking-tight leading-tight mb-6">
-            Every Moment Has a Story. <br />
-           
-          </h2>
-          
-          <p className="text-sm md:text-base text-orange-200 leading-relaxed mb-6 font-medium font-sans italic">
-            At SingleKey Photography, we believe that the most beautiful memories are found in genuine emotions and unforgettable moments. From the excitement of a wedding day to the quiet connection between two people, we capture every moment with creativity, care, and attention to detail.
-          </p>
-        </motion.div>
+        {/* Right Side: Content & Story */}
+       
 
       </div>
     </section>

@@ -48,40 +48,40 @@ export default function InteriorGallery() {
   }, []);
 
   return (
-    <div className="w-full bg-black flex items-center justify-center p-5">
+    <div className="w-full bg-black flex items-center justify-center p-2 sm:p-5">
       {/* Container */}
-      <div className="w-full bg-black p-2 rounded-lg shadow-2xl flex flex-col font-sans">
+      <div className="w-full  bg-black rounded-lg shadow-2xl flex flex-col font-sans">
         
         {/* Header Section */}
         <div className="flex flex-col gap-2">
-          <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-orange-400 p-4 font-sans italic">
+          <h1 className="text-xl sm:text-2xl md:text-3xl font-extrabold tracking-tight text-orange-400 p-2 sm:p-4 font-sans italic">
             SingleKey Collections
           </h1>
         </div>
 
         {/* Row 1: Top Section */}
-        <div className="grid grid-cols-4 bg-black">
+        <div className="grid grid-cols-2 md:grid-cols-4   bg-black">
           {/* Swatch 1 */}
-          <motion.div layout transition={{ duration: 0.8, ease: "easeInOut" }} className="bg-[#C66311] rounded-[3px] min-h-[65px] overflow-hidden">
+          <motion.div layout transition={{ duration: 0.8, ease: "easeInOut" }} className="bg-[#C66311] rounded-[3px] min-h-[50px] sm:min-h-[65px] overflow-hidden">
             <img src={images[0].src} alt={images[0].alt} className="w-full h-full object-cover" />
           </motion.div>
 
           {/* Swatch 2 */}
-          <motion.div layout transition={{ duration: 0.8, ease: "easeInOut" }} className="bg-[#C8AC8B] rounded-[3px] min-h-[65px] overflow-hidden">
+          <motion.div layout transition={{ duration: 0.8, ease: "easeInOut" }} className="bg-[#C8AC8B] rounded-[3px] min-h-[50px] sm:min-h-[65px] overflow-hidden">
             <img src={images[1].src} alt={images[1].alt} className="w-full h-full object-cover" />
           </motion.div>
           
           {/* Top Wide Room Image */}
-          <motion.div layout transition={{ duration: 0.8, ease: "easeInOut" }} className="col-span-2 overflow-hidden rounded-[3px]">
-            <img src={images[2].src} alt={images[2].alt} className="w-full h-150 object-cover" />
+          <motion.div layout transition={{ duration: 0.8, ease: "easeInOut" }} className="col-span-2 overflow-hiddenrounded-[3px]">
+            <img src={images[2].src} alt={images[2].alt} className="w-full h-full  md:h-[450px] object-cover" />
           </motion.div>
         </div>
 
         {/* Row 2: Bottom Section */}
-        <div className="grid grid-cols-2 bg-black">
+        <div className="grid grid-cols-1 md:grid-cols-2  bg-black ">
           
           {/* Left Column Stack */}
-          <div className="flex flex-col">
+          <div className="flex flex-col ">
             <motion.div layout transition={{ duration: 0.8, ease: "easeInOut" }} className="overflow-hidden rounded-[3px] aspect-[4/3]">
               <img src={images[3].src} alt={images[3].alt} className="w-full h-full object-cover" />
             </motion.div>
@@ -91,13 +91,13 @@ export default function InteriorGallery() {
           </div>
 
           {/* Right Column Stack */}
-          <div className="flex flex-col">
+          <div className="flex flex-col ">
             <motion.div layout transition={{ duration: 0.8, ease: "easeInOut" }} className="overflow-hidden rounded-[3px] aspect-[16/10]">
               <img src={images[5].src} alt={images[5].alt} className="w-full h-full object-cover" />
             </motion.div>
 
             {/* Bottom Small Grid */}
-            <div className="grid grid-cols-3 bg-black">
+            <div className="grid grid-cols-3  bg-black">
               {images.slice(6, 12).map((img) => (
                 <motion.div key={img.id} layout transition={{ duration: 0.8, ease: "easeInOut" }} className="overflow-hidden rounded-[3px] aspect-[3/4]">
                   <img src={img.src} alt={img.alt} className="w-full h-full object-cover" />

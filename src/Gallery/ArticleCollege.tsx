@@ -3,7 +3,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
-// 11 இடங்களுக்கும் உரிய நிலையான கட்டமைப்பு மற்றும் ஐடிகள்
 const initialSlots = [
   { id: 'slot-1', aspect: "aspect-[3/4]" },
   { id: 'slot-2', aspect: "aspect-[4/3]" },
@@ -17,7 +16,6 @@ const initialSlots = [
   { id: 'slot-10', aspect: "aspect-square" },
   { id: 'slot-11', aspect: "aspect-[4/3]" }
 ];
-
 
 const initialImages = [
   { uniqueId: 'img-1', src: "https://images.pexels.com/photos/33786311/pexels-photo-33786311/free-photo-of-vibrant-indian-pre-wedding-ceremony-celebration.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
@@ -63,12 +61,13 @@ export default function ArtisticCollage() {
   const col3 = currentCollage.slice(7, 11);
 
   return (
-    <div className="w-full min-h-screen bg-black flex flex-col items-center justify-center p-6 sm:p-12">
+    <div className="w-full min-h-screen bg-black flex flex-col items-center justify-center p-3 sm:p-6 md:p-12">
     
-      <div className="w-full max-w-4xl grid grid-cols-1 sm:grid-cols-3 gap-4 items-start">
+      {/* Responsive Grid: grid-cols-2 for mobile screens, md:grid-cols-3 for tablets/desktops */}
+      <div className="w-full max-w-4xl grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 items-start">
         
         {/* Column 1 */}
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-3 sm:gap-4">
           {col1.map((item) => (
             <motion.div 
               key={item.uniqueId} 
@@ -86,7 +85,7 @@ export default function ArtisticCollage() {
         </div>
 
         {/* Column 2 */}
-        <div className="flex flex-col gap-4 sm:mt-12">
+        <div className="flex flex-col gap-3 sm:gap-4 md:mt-12">
           {col2.map((item) => (
             <motion.div 
               key={item.uniqueId} 
@@ -103,8 +102,8 @@ export default function ArtisticCollage() {
           ))}
         </div>
 
-        {/* Column 3 */}
-        <div className="flex flex-col gap-4 sm:mt-6">
+        {/* Column 3 - Automatically spans full width or flows correctly on 2-column mobile screens */}
+        <div className="flex flex-col gap-3 sm:gap-4 md:mt-6 col-span-2 md:col-span-1">
           {col3.map((item) => (
             <motion.div 
               key={item.uniqueId} 

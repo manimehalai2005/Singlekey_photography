@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight, Sparkles, Camera } from "lucide-react";
 import { motion } from "framer-motion";
 import Masonry from "./Mansory";
 import PhotographyServicesSection from "./Service";
@@ -25,14 +25,60 @@ export default function PhotoAboutSection() {
     { id: "14", img: "https://tse3.mm.bing.net/th/id/OIP.lQGhX1LcWGiWNCJT458IBAHaDg?r=0&rs=1&pid=ImgDetMain&o=7&rm=3", url: "#", height: 300, title: "collegeEvent" },
   ];
 
+  // Mobile curated highlight items for cleaner mobile preview
+  const mobileHighlights = [
+    { title: "Baby Shower", img: "https://tse1.mm.bing.net/th/id/OIP.7KOAjvvwdKBacnZ_3UlLbQHaJQ?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" },
+    { title: "Pre Wedding", img: "https://dstudios.in/wp-content/uploads/2024/06/pre-wedding-adarsh-asihwarya-shoot-768x1152.jpeg" },
+    { title: "Haldi & Mehendi", img: "https://images.filmibeat.com/ph-big/2018/04/meghana-raj-mehendi-ceremony-photos_152480123700.jpg" },
+    { title: "Social Moments", img: "https://i.pinimg.com/736x/fd/a7/a2/fda7a255971143599a0124b3a56489c9.jpg" },
+  ];
+
   return (
-    <main className="w-full bg-transparent flex flex-col items-center justify-center p-4 md:p-8 overflow-hidden">
-      
-      {/* Outer Card Container - Fully Transparent */}
-      <div className="relative w-full bg-transparent rounded-3xl overflow-hidden flex flex-col p-6 md:p-12">
+    <main className="w-full bg-transparent flex flex-col items-center justify-center p-3 md:p-8 overflow-hidden">
+      <div className="block md:hidden w-full space-y-6">
+        {/* Top Tagline */}
+        <div className="flex items-center justify-between px-2">
+          <p className="text-[11px] uppercase tracking-wider text-amber-400 font-medium flex items-center gap-1.5">
+            <Sparkles size={12} />
+            Capturing timeless stories.
+          </p>
+          <span className="text-[10px] text-orange-200/80 uppercase tracking-widest">
+            Excellence
+          </span>
+        </div>
+
+        {/* Mobile Header / Intro */}
+        <div className="px-2 space-y-1">
+          <h2 className="text-2xl font-serif text-orange-200">Our Gallery Highlights</h2>
+          <p className="text-xs text-orange-200/70">Explore our best moments captured across weddings, pre-weddings, and celebrations.</p>
+        </div>
+
+        {/* Mobile Grid Layout for Highlights */}
+        <div className="grid grid-cols-2 gap-3 px-1">
+          {mobileHighlights.map((item, idx) => (
+            <div 
+              key={idx}
+              className="relative h-44 rounded-2xl overflow-hidden border border-white/20 flex flex-col justify-end p-3 bg-cover bg-center shadow-lg brightness-125 contrast-105"
+              style={{ backgroundImage: `url('${item.img}')` }}
+            >
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
+              <span className="relative z-10 text-[10px] uppercase tracking-wider text-amber-300 font-bold">
+                {item.title}
+              </span>
+            </div>
+          ))}
+        </div>
+
+        
+
+      </div>
+
+
+     
+      <div className="hidden md:flex relative w-full bg-transparent rounded-3xl overflow-hidden flex-col p-6 md:p-12">
         
         {/* Top Small Tagline */}
-        <div className="flex items-center justify-between mb-8 pb-4">
+        <div className="flex items-center justify-between pb-4">
           <motion.p 
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}

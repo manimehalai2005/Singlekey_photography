@@ -69,54 +69,54 @@ export default function HouseWarmingStorySection() {
         </motion.div>
 
         {/* Rain / Falling Mini Photo Frames - User பார்க்கும் போது மேலிருந்து கீழே கொட்டும் */}
-        <div className="px-6 -mt-10 grid grid-cols-3 gap-2 relative z-20">
-          
-          {/* Image 1: Slow Rain Fall */}
-          <motion.div
-            variants={createFallingVariants(0.1)}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            className="h-60 bg-neutral-900 p-1 shadow-2xl rounded transform -rotate-3 overflow-hidden"
-          >
-            <img
-              src="https://d3e1m60ptf1oym.cloudfront.net/445f7c6b-2d88-471a-bb10-39f7e89e18b8/08_SFE_110217_239_xgaplus.jpg"
-              alt="House Warming Rituals"
-              className="w-full h-full object-cover rounded"
-            />
-          </motion.div>
+      <div className="px-4 sm:px-6 -mt-6 sm:-mt-10 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-4 relative z-20">
+  
+  {/* Image 1: Slow Rain Fall */}
+  <motion.div
+    variants={createFallingVariants(0.1)}
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true, amount: 0.3 }}
+    className="h-64 sm:h-72 md:h-60  p-1.5 shadow-2xl rounded md:-rotate-3 overflow-hidden"
+  >
+    <img
+      src="https://d3e1m60ptf1oym.cloudfront.net/445f7c6b-2d88-471a-bb10-39f7e89e18b8/08_SFE_110217_239_xgaplus.jpg"
+      alt="House Warming Rituals"
+      className="w-full h-full object-cover rounded"
+    />
+  </motion.div>
 
-          {/* Image 2: Delayed Rain Fall */}
-          <motion.div
-            variants={createFallingVariants(0.4)}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            className="h-60 bg-neutral-900 p-1 shadow-2xl rounded transform rotate-2 overflow-hidden -mt-2"
-          >
-            <img
-              src="https://tse1.mm.bing.net/th/id/OIP.LWqO_LqE9RWAtZUAhP5izwHaLG?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
-              alt="Family Gathering"
-              className="w-full h-full object-cover rounded"
-            />
-          </motion.div>
+  {/* Image 2: Delayed Rain Fall */}
+  <motion.div
+    variants={createFallingVariants(0.4)}
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true, amount: 0.3 }}
+    className="h-64 sm:h-72 md:h-60  p-1.5 shadow-2xl rounded md:rotate-2 overflow-hidden md:-mt-2"
+  >
+    <img
+      src="https://tse1.mm.bing.net/th/id/OIP.LWqO_LqE9RWAtZUAhP5izwHaLG?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+      alt="Family Gathering"
+      className="w-full h-full object-cover rounded"
+    />
+  </motion.div>
 
-          {/* Image 3: Last Rain Fall */}
-          <motion.div
-            variants={createFallingVariants(0.7)}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            className="h-60 bg-neutral-900 p-1 shadow-2xl rounded transform rotate-6 overflow-hidden"
-          >
-            <img
-              src="https://i.pinimg.com/originals/0e/25/67/0e256719e8583d15183eac0c956ae541.jpg"
-              alt="Joyful Moments"
-              className="w-full h-full object-cover rounded"
-            />
-          </motion.div>
+  {/* Image 3: Last Rain Fall */}
+  <motion.div
+    variants={createFallingVariants(0.7)}
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true, amount: 0.3 }}
+    className="h-64 sm:h-72 md:h-60  p-1.5 shadow-2xl rounded md:rotate-6 overflow-hidden"
+  >
+    <img
+      src="https://i.pinimg.com/originals/0e/25/67/0e256719e8583d15183eac0c956ae541.jpg"
+      alt="Joyful Moments"
+      className="w-full h-full object-cover rounded"
+    />
+  </motion.div>
 
-        </div>
+</div>
 
         {/* Content Section with Letter Animations */}
         <div className="p-6 text-center flex flex-col items-center">

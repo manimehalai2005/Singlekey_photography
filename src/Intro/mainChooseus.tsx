@@ -8,70 +8,6 @@ const Mainchooseus = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
 
-  // 10 different cards with calculated fan angles and translations
-  const cards = [
-    {
-      title: 'wedding',
-      description: 'wedding anivisary',
-      image: 'https://i.pinimg.com/originals/fd/4a/9d/fd4a9d8c3f53cf229edca2b80e86eaa0.jpg',
-      rotation: '-rotate-[35deg] -translate-x-[140px]',
-    },
-    {
-      title: 'pre-wedding',
-      description: 'pre-wedding photoshoot',
-      image: 'https://www.atlhea.in/wp-content/uploads/2020/11/blog2-730x450.jpg',
-      rotation: '-rotate-[27deg] -translate-x-[110px]',
-    },
-    {
-      title: 'Ear-peirecing',
-      description: 'Ear-piercing event',
-      image: 'https://th.bing.com/th/id/OIP._pJVPUrD6ug9nnkvIVT_fAHaE8?w=267&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3',
-      rotation: '-rotate-[19deg] -translate-x-[80px]',
-    },
-    {
-      title: 'Birthday event',
-      description: 'Birthdayevent function',
-      image: 'https://as1.ftcdn.net/v2/jpg/06/27/74/86/1000_F_627748608_SA1FNtmzgPR0Z3eC7wdkvQnu7PIl5uFq.jpg',
-      rotation: '-rotate-[10deg] -translate-x-[40px]',
-    },
-    {
-      title: 'Baby shower',
-      description: 'Babyshower event',
-      image: 'https://tse2.mm.bing.net/th/id/OIP.H9bwQrsmHqaODiQVUpd07QHaE8?r=0&rs=1&pid=ImgDetMain&o=7&rm=3',
-      rotation: '-rotate-[3deg] -translate-x-[10px]',
-    },
-    {
-      title: 'Naming ceremony',
-      description: 'NamingFunction conduct',
-      image: 'https://photographerprasanna.in/wp-content/uploads/2024/01/DSC00030.jpg',
-      rotation: 'rotate-[4deg] translate-x-[20px]',
-    },
-    {
-      title: 'HouseWarming ',
-      description: ' HouseWarming Ceremony',
-      image: 'https://tse3.mm.bing.net/th/id/OIP.jB8Wlisnilxpo0vL79M5MQHaJ4?r=0&rs=1&pid=ImgDetMain&o=7&rm=3',
-      rotation: 'rotate-[12deg] translate-x-[60px]',
-    },
-    {
-      title: 'Ritual',
-      description: 'Ritual ceremony',
-      image: 'https://tse4.mm.bing.net/th/id/OIP.pj7aY5k7ngMdnfa5GBJ8YwHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3',
-      rotation: 'rotate-[20deg] translate-x-[100px]',
-    },
-    {
-      title: 'Puberty',
-      description: 'Puberty ceremony',
-      image:'https://tse1.mm.bing.net/th/id/OIP.W79fSqW9iMFj1fzrnkb7ggHaE8?r=0&rs=1&pid=ImgDetMain&o=7&rm=3',
-      rotation: 'rotate-[28deg] translate-x-[130px]',
-    },
-    {
-      title: 'postWedding',
-      description: 'postwedding ceremony',
-      image: 'https://phometo.com/images/gallery/post-wedding-shoot-in-bangalore.jpg',
-      rotation: 'rotate-[36deg] translate-x-[160px]',
-    },
-  ];
-
   // Left side InfiniteSpiral images
   const images = [
     { src: 'https://tse3.mm.bing.net/th/id/OIP.pd8_nKd7opBpQRUzb31uAAHaE7?r=0&rs=1&pid=ImgDetMain&o=7&rm=3', alt: 'ritual' },
@@ -148,40 +84,66 @@ const Mainchooseus = () => {
   const visible = getVisibleItems();
 
   return (
-    <section className="w-full bg-transparent text-orange-300 py-20 px-6 sm:px-12 lg:px-20 overflow-hidden">
+    <section className="w-full bg-transparent text-orange-300 py-12 sm:py-20 px-4 sm:px-12 lg:px-20 overflow-hidden">
       <div className="w-full max-w-[1500px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         
-        {/* Left Side: Infinite Spiral Component */}
+        {/* Left Side: Responsive Infinite Spiral Component */}
         <motion.div 
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="lg:col-span-5 w-full"
+          className="lg:col-span-5 w-full flex justify-center lg:justify-end"
         >
-         <div style={{ height: '600px', position: 'relative', overflow: 'hidden' }} className="w-full flex items-center justify-end">
-  <InfiniteSpiral
-    items={images}
-    animationMode="auto"
-    speed={0.55}
-    radius={170}
-    cardWidth={100}
-    cardHeight={100}
-    verticalSpacing={60}
-    perspective={1000}
-    cardRadius={10}
-    centerScale={1.2}
-    edgeBlur={0}
-    cardsPerTurn={7}
-    pauseOnHover
-    direction="up"
-    rotation={0}
-    cardTilt={0}
-    edgeFade={0}
-    imageFit="cover"
-    grayscale={0}
-  />
-</div>
+          {/* Mobile Screen Version (Compact & Small) */}
+          <div className="block sm:hidden w-full h-[300px] relative overflow-hidden flex items-center justify-center">
+            <InfiniteSpiral
+              items={images}
+              animationMode="auto"
+              speed={0.55}
+              radius={110}
+              cardWidth={100}
+              cardHeight={100}
+              verticalSpacing={40}
+              perspective={800}
+              cardRadius={8}
+              centerScale={1.15}
+              edgeBlur={0}
+              cardsPerTurn={6}
+              pauseOnHover
+              direction="up"
+              rotation={0}
+              cardTilt={0}
+              edgeFade={0}
+              imageFit="cover"
+              grayscale={0}
+            />
+          </div>
+
+          {/* Desktop / Large Screen Version (Big & Full Height) */}
+          <div className="hidden sm:flex w-full h-[600px] lg:h-[650px] relative overflow-hidden items-center justify-center lg:justify-end">
+            <InfiniteSpiral
+              items={images}
+              animationMode="auto"
+              speed={0.55}
+              radius={180}
+              cardWidth={110}
+              cardHeight={110}
+              verticalSpacing={65}
+              perspective={1100}
+              cardRadius={12}
+              centerScale={1.25}
+              edgeBlur={0}
+              cardsPerTurn={7}
+              pauseOnHover
+              direction="up"
+              rotation={0}
+              cardTilt={0}
+              edgeFade={0}
+              imageFit="cover"
+              
+            />
+          </div>
         </motion.div>
         
         {/* Right Side: Auto Sliding Gallery Section */}
@@ -190,22 +152,22 @@ const Mainchooseus = () => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="lg:col-span-7 flex flex-col items-center justify-center w-full"
+          className="lg:col-span-7 flex flex-col items-center justify-center w-full px-2 sm:px-0"
         >
           
           {/* Header Title Section */}
-          <div className="text-center space-y-2 mb-10">
+          <div className="text-center space-y-2 mb-8 sm:mb-10">
             <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-orange-300">
               Explore Our Gallery
             </h2>
-            <p className="text-sm text-orange-300/80 font-medium">
+            <p className="text-xs sm:text-sm text-orange-300/80 font-medium px-4">
               Slides automatically. Hover to pause, or click side cards to navigate.
             </p>
           </div>
 
           {/* Gallery Showcase Container with Hover Pause */}
           <div 
-            className="relative flex items-center justify-center gap-4 sm:gap-6 w-full cursor-pointer"
+            className="relative flex items-center justify-center gap-4 sm:gap-6 w-full cursor-pointer max-w-xl mx-auto"
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
           >
@@ -232,7 +194,7 @@ const Mainchooseus = () => {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.4 }}
-              className="relative w-full sm:w-[420px] lg:w-[520px] h-[360px] sm:h-[420px] lg:h-[460px] rounded-[2.5rem] overflow-hidden shadow-2xl z-10 brightness-125 contrast-105 border border-orange-300/20"
+              className="relative w-full max-w-[340px] sm:max-w-none sm:w-[420px] lg:w-[520px] h-[320px] sm:h-[420px] lg:h-[460px] rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden shadow-2xl z-10 brightness-125 contrast-105 border border-orange-300/20 mx-auto"
             >
               <img
                 src={visible.center.image}
@@ -241,11 +203,11 @@ const Mainchooseus = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
               
-              <div className="absolute bottom-6 left-6 right-6 text-white">
-                <span className="text-xs font-bold tracking-wider text-orange-300 uppercase block mb-1">
+              <div className="absolute bottom-5 sm:bottom-6 left-5 sm:left-6 right-5 sm:right-6 text-white">
+                <span className="text-[10px] sm:text-xs font-bold tracking-wider text-orange-300 uppercase block mb-1">
                   {visible.center.subtitle}
                 </span>
-                <h3 className="text-xl sm:text-2xl font-black text-amber-200">
+                <h3 className="text-lg sm:text-2xl font-black text-amber-200">
                   {visible.center.title}
                 </h3>
               </div>

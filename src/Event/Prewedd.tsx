@@ -40,7 +40,7 @@ interface ColumnMeta {
 }
 
 const DEFAULT_ITEMS: DriftWallItem[] = Array.from({ length: 15 }, (_, i) => {
-  const ids = [1015, 1025, 1039, 1043, 1044, 1050, 1062, 1069, 1074, 1080, 1084, 106, 110, 133, 164];
+  const ids = [1015, 1025, 1039, 1043, 1044, 1050, 1062, 1069, 1074, 1080, 1084, 110, 133, 164];
   return {
     image: `https://picsum.photos/id/${ids[i % ids.length]}/600/400`,
     title: `Tile ${i + 1}`,
@@ -77,7 +77,7 @@ export const DriftWall = ({
   pauseOnHover = false,
   lift = 64,
   fade = 0.6,
-  dim = 1,
+  dim = 1, // Full opacity for brighter look
   grayscale = false,
   overlayColor = '#030008',
   className = '',
@@ -213,6 +213,7 @@ export const DriftWall = ({
     hoveredColRef.current = index;
     setActiveId(id);
   }, []);
+
   const release = useCallback((): void => {
     activeIdRef.current = null;
     hoveredColRef.current = -1;
@@ -286,11 +287,13 @@ export const DriftWall = ({
     'group-[.is-active]/tile:shadow-[0_0_50px_rgba(236,72,153,1),0_0_80px_rgba(168,85,247,0.8)]',
     'group-focus-visible/tile:opacity-100 group-focus-visible/tile:[transform:translateZ(var(--dw-lift))]'
   );
+
+  // Updated image filter for maximum brightness & vivid colors
   const imgClass = cx(
     'block h-full w-full select-none object-cover',
-    '[filter:grayscale(var(--dw-gray))_saturate(1.35)_brightness(1.15)]',
+    '[filter:grayscale(var(--dw-gray))_saturate(1.4)_brightness(1.35)_contrast(1.05)]',
     'transition-[filter] duration-[420ms] ease-[cubic-bezier(0.22,1,0.36,1)]',
-    'group-[.is-active]/tile:[filter:grayscale(0)_saturate(1.5)_brightness(1.2)] group-focus-visible/tile:[filter:grayscale(0)_saturate(1.5)_brightness(1.2)]'
+    'group-[.is-active]/tile:[filter:grayscale(0)_saturate(1.6)_brightness(1.4)] group-focus-visible/tile:[filter:grayscale(0)_saturate(1.6)_brightness(1.4)]'
   );
   const overlayClass = cx(
     'pointer-events-none absolute inset-0 bg-[var(--dw-overlay)] opacity-0',
@@ -409,7 +412,7 @@ export default function WeddingDriftGallery() {
     { image: 'https://weddingsutra.com/images/wedding-images/entertaining/tamil-traditional-wedding/tamil-wedding-ritual-intro.webp', title: 'Traditional Attire' },
     { image: 'https://thetalesoftradition.com/wp-content/uploads/2024/01/vivekkrishnanphotography-779-1024x683.jpg', title: 'Happy Guests' },
     { image: 'https://petermalakoff.jalbum.net/AGNILINGAM%20HOUSE%20PUJA%20TIRUVANNAMALAI%2C%20TAMIL%20NADU%202011/slides/Worship%20of%20the%20cow%20on%20threshold%20of%20house.JPG', title: 'Groom Smile' },
-    { image:'https://img.perniaspopupshop.com/store-locator-v2/uploads/Maruvidumainmobile_fc0401f4be.jpg', title: 'Bridal Portrait' },
+    { image: 'https://img.perniaspopupshop.com/store-locator-v2/uploads/Maruvidumainmobile_fc0401f4be.jpg', title: 'Bridal Portrait' },
     { image: 'https://img.staticmb.com/mbcontent/images/crop/uploads/ver2/XIwvQlc61t8ZIpanz4mAnjUzcpDvwxtAGgoneFOu_Uc5mA/puthandu-tamil-new-year-decoration-ideas_0_1200.jpg', title: 'Friends & Family' },
     { image: 'https://phometo.com/images/gallery/Housewarming_Photoshoot_bangalore.jpg', title: 'Joyful Moments' }
   ];

@@ -219,7 +219,7 @@ export default function PubertyCeremonyTemplateSection() {
             transition={{ duration: 0.6, delay: 0.4 }}
           >
             <motion.img
-              src="https://www.jaihindhphotography.com/wp-content/uploads/2024/11/Puberty-Photographers-3-scaled.jpg"
+              src="https://sidphoto.in/wp-content/uploads/2024/09/WhatsApp-Image-2024-09-23-at-15.46.39-18.jpeg"
               alt="Joyful Celebration"
               className="w-full h-full object-cover"
               animate={{

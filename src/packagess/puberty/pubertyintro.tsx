@@ -1,78 +1,130 @@
 "use client";
 
-export default function PubertyIntro() {
+export default function BabyIntro() {
+  const bgImageUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZh4Aick4Xt8YZVrIUeNwRCBd1eW4ZuBVhh2CVpc_TpzVy75HoeUcXOpxS&s=10";
+
   return (
-    <main className="relative w-full h-screen min-h-[600px] bg-black overflow-hidden flex items-center">
-      <div className="absolute inset-0 z-0">
-        <img
-          src="https://c2.staticflickr.com/4/3422/3232124492_9abebcf0ce_b.jpg"
-          alt="Puberty Celebration"
-          className="w-full h-full object-cover brightness-150 contrast-110"
-        />
-       
-        <div className="absolute inset-0 bg-black/10 pointer-events-none" />
-      </div>
-      <div className="relative z-10 w-full max-w-6xl mx-auto px-6 md:px-16 flex flex-col items-start justify-center h-full">
-        
-        <div className="relative overflow-hidden animate-contentReveal py-2">
-
-          <h1 className="text-5xl md:text-7xl font-black text-orange-300 uppercase leading-none drop-shadow-md">
-            Puberty celebration
-          </h1>
-
-          <p className="text-3xl md:text-5xl italic font-serif text-white mt-2 drop-shadow-sm">
-            Stories
-          </p>
-
-          <div className="absolute inset-0 bg-black animate-overlayReveal pointer-events-none" />
-
+    <main className="relative w-full h-screen overflow-hidden bg-black">
+      
+      {/* ================= DESKTOP TEMPLATE (sm and above) ================= */}
+      <div className="hidden sm:block relative w-full h-full">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0 overflow-hidden">
+          <img
+            src={bgImageUrl}
+            alt="Babysho Background"
+            className="baby-bg w-full h-full object-cover animate-water-wave brightness-110 contrast-105"
+          />
+          <div className="absolute inset-0 bg-black/20 pointer-events-none" />
         </div>
 
+        <div className="relative z-10 w-full max-w-6xl mx-auto px-6 md:px-16 flex flex-col items-start justify-center h-full">
+          <div className="relative overflow-hidden animate-contentReveal">
+            <h1 className="baby-title text-7xl font-black text-orange-400 uppercase leading-none drop-shadow-lg">
+              Puberty ceremony
+            </h1>
+            <p className="text-3xl md:text-5xl italic font-serif text-amber-200 mt-2 drop-shadow-md">
+              Stories
+            </p>
+            <div className="absolute inset-0 bg-black z-20 animate-overlayReveal pointer-events-none" />
+          </div>
+        </div>
       </div>
-      <style jsx>{`
 
-        /* Content clip animation */
+      {/* ================= MOBILE DESIGN (Below sm) ================= */}
+      <div className="sm:hidden relative w-full h-full overflow-hidden bg-black pt-0">
+        
+        {/* Triple Background Images in Column Layout */}
+        <div className="absolute inset-x-0 top-[22%] h-[65%] flex flex-col gap-2 px-4 z-0">
+          <div className="flex-1 w-full relative overflow-hidden rounded-md border border-white/10">
+            <img
+              src={bgImageUrl}
+              alt="Babyshower Memory 1"
+              className="w-full h-full object-cover object-center"
+            />
+            <div className="absolute inset-0 bg-black/15 pointer-events-none" />
+          </div>
+          <div className="flex-1 w-full relative overflow-hidden rounded-md border border-white/10">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvM7clXPiD2ZO_df_D2AhQc68R2mdwGpltait2lhLqTLL79VOw2mZcr9I&s=10"
+              alt="Babyshower Memory 2"
+              className="w-full h-full object-cover object-center"
+            />
+            <div className="absolute inset-0 bg-black/15 pointer-events-none" />
+          </div>
+          <div className="flex-1 w-full relative overflow-hidden rounded-md border border-white/10">
+            <img
+              src="https://sidphoto.in/wp-content/uploads/2024/09/WhatsApp-Image-2024-09-23-at-15.46.39-22.jpeg"
+              alt="Babyshower Memory 3"
+              className="w-full h-full object-cover object-center"
+            />
+            <div className="absolute inset-0 bg-black/15 pointer-events-none" />
+          </div>
+        </div>
+
+        {/* Global Overlay */}
+        <div className="absolute top-[20%] left-0 w-full h-[70%] bg-black/25 pointer-events-none z-5" />
+
+        {/* Mobile Text - Staring cleanly from top */}
+        <div className="relative z-10 flex flex-col items-start justify-start w-full h-full pt-4 px-4 text-left">
+          <div className="w-full mobile-text-reveal">
+            <h1 className="mobile-title text-3xl mt-10 font-black text-orange-400 uppercase leading-none">
+              <span className="block">Puberty ceremony</span>
+            </h1>
+            <p className="mobile-subtitle italic font-serif text-amber-200 text-xl mt-1">
+              Stories
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* ================= STYLES ================= */}
+      <style jsx>{`
+        @keyframes waterWave {
+          0% {
+            transform: scale(1) translate(0, 0) rotate(0deg);
+          }
+          33% {
+            transform: scale(1.06) translate(-10px, 12px) rotate(1deg);
+          }
+          66% {
+            transform: scale(1.04) translate(12px, -8px) rotate(-1deg);
+          }
+          100% {
+            transform: scale(1) translate(0, 0) rotate(0deg);
+          }
+        }
+
         @keyframes contentReveal {
           0% {
             clip-path: inset(0 100% 0 0);
           }
-
           100% {
             clip-path: inset(0 0 0 0);
           }
         }
 
-
-        /* Black overlay moves left → right */
         @keyframes overlayReveal {
           0% {
-            transform: translateX(0);
+            transform: translateX(0%);
           }
-
           100% {
             transform: translateX(101%);
           }
         }
 
+        .animate-water-wave {
+          animation: waterWave 10s ease-in-out infinite;
+        }
 
-        /* Content animation class */
         .animate-contentReveal {
-          animation: contentReveal 1.4s
-            cubic-bezier(0.77, 0, 0.18, 1)
-            forwards;
+          animation: contentReveal 1.4s cubic-bezier(0.77, 0, 0.18, 1) forwards;
         }
 
-
-        /* Overlay animation class */
         .animate-overlayReveal {
-          animation: overlayReveal 1.2s
-            cubic-bezier(0.77, 0, 0.18, 1)
-            0.2s
-            forwards;
+          animation: overlayReveal 1.2s cubic-bezier(0.77, 0, 0.18, 1) 0.2s forwards;
         }
-
       `}</style>
-
     </main>
   );
 }

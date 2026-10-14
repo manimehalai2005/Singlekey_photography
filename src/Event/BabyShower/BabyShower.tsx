@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React from 'react';
 import { motion, Variants } from 'framer-motion';
@@ -60,20 +60,20 @@ export default function BabyShowerMenuCard() {
 
   return (
     <>
-    <StarfieldCursor/>
-      <section className="relative w-full bg-transparent text-white flex flex-col justify-center items-center overflow-hidden py-10">
+      <StarfieldCursor/>
+      <section className="relative w-full bg-transparent text-white flex flex-col justify-center items-center overflow-hidden py-6 sm:py-10">
         
         {/* Main Card Container */}
-        <div className="w-full max-w-7xl mx-auto rounded-3xl p-6 sm:p-12 shadow-2xl relative mt-6">
+        <div className="w-full max-w-7xl mx-auto rounded-3xl px-4 sm:px-12 py-4 sm:py-12 shadow-2xl relative mt-4">
           
           {/* Header Title Animated Letter by Letter */}
-          <div className="text-center mb-16">
+          <div className="text-center mb-10 sm:mb-16">
             <motion.h1 
               variants={sentenceVariants}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              className="font-semibold italic text-4xl sm:text-6xl text-amber-300 tracking-wide flex flex-wrap justify-center gap-x-2"
+              className="font-semibold italic text-3xl sm:text-6xl text-amber-300 tracking-wide flex flex-wrap justify-center gap-x-2"
             >
               {titleText.split(" ").map((word, wordIdx) => (
                 <span key={wordIdx} className="inline-flex">
@@ -87,20 +87,20 @@ export default function BabyShowerMenuCard() {
             </motion.h1>
           </div>
 
-          {/* Layout Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          {/* Layout Grid: Mobile-ல் படங்கள் மற்றும் டெக்ஸ்ட் சரியாக வரிசைப்படுத்தப்பட்டுள்ளது */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
             
-            {/* Top Left: Photo 1 */}
-            <div className="lg:col-span-6">
+            {/* 1st Row: Photo 1 */}
+            <div className="lg:col-span-6 w-full">
               <motion.div 
                 variants={bookOpenVariants}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, margin: "-30px" }}
                 style={{ transformOrigin: "left center" }}
-                className="transform -rotate-2 rounded-2xl"
+                className="transform sm:-rotate-2 rounded-2xl w-full"
               >
-                <div className="w-full h-64 sm:h-80 mx-auto overflow-hidden bg-neutral-800 rounded-xl">
+                <div className="w-full h-56 sm:h-80 mx-auto overflow-hidden bg-neutral-800 rounded-xl shadow-lg">
                   <img
                     src="https://www.joonsquare.com/usermanage/image/business/srikar-rao-photography-warangal-urban-31267/srikar-rao-photography-warangal-urban-srikar-rao-photography-no3.jpg"
                     alt="Traditional Bangle Ceremony & Blessing"
@@ -110,14 +110,14 @@ export default function BabyShowerMenuCard() {
               </motion.div>
             </div>
 
-            {/* Top Right: Text 1 */}
-            <div className="lg:col-span-6 text-left px-2">
+            {/* 1st Row: Text 1 */}
+            <div className="lg:col-span-6 text-left px-1 sm:px-2 w-full">
               <motion.h3 
                 variants={sentenceVariants}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
-                className="font-sans font-bold text-2xl text-amber-300 mb-2 flex flex-wrap gap-x-1.5"
+                className="font-sans font-bold text-xl sm:text-2xl text-amber-300 mb-2 flex flex-wrap gap-x-1.5"
               >
                 {"Bangle Ceremony and Blessings".split(" ").map((word, wIdx) => (
                   <span key={wIdx} className="inline-flex">
@@ -153,7 +153,7 @@ export default function BabyShowerMenuCard() {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
-                className="font-serif italic text-sm text-[#C89B7B] flex flex-wrap gap-x-1"
+                className="font-serif italic text-xs sm:text-sm text-[#C89B7B] flex flex-wrap gap-x-1"
               >
                 {"Tradition | Blessings | Grace".split(" ").map((word, wIdx) => (
                   <span key={wIdx} className="inline-flex">
@@ -167,14 +167,14 @@ export default function BabyShowerMenuCard() {
               </motion.p>
             </div>
 
-            {/* Middle Left: Text 2 */}
-            <div className="lg:col-span-6 text-left px-2 order-4 lg:order-none">
+            {/* 2nd Row: Text 2 (Mobile-ல் சரியான ஒழுங்கமைப்பிற்காக order மாற்றப்பட்டுள்ளது) */}
+            <div className="lg:col-span-6 text-left px-1 sm:px-2 order-4 lg:order-none w-full">
               <motion.h3 
                 variants={sentenceVariants}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
-                className="font-sans font-bold text-2xl text-amber-300 mb-2 flex flex-wrap gap-x-1.5"
+                className="font-sans font-bold text-xl sm:text-2xl text-amber-300 mb-2 flex flex-wrap gap-x-1.5"
               >
                 {"Sacred Variety Rice Feast".split(" ").map((word, wIdx) => (
                   <span key={wIdx} className="inline-flex">
@@ -210,7 +210,7 @@ export default function BabyShowerMenuCard() {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
-                className="font-serif italic text-sm text-[#C89B7B] flex flex-wrap gap-x-1"
+                className="font-serif italic text-xs sm:text-sm text-[#C89B7B] flex flex-wrap gap-x-1"
               >
                 {"Authentic | Delicious | Celebration".split(" ").map((word, wIdx) => (
                   <span key={wIdx} className="inline-flex">
@@ -224,17 +224,17 @@ export default function BabyShowerMenuCard() {
               </motion.p>
             </div>
 
-            {/* Middle Right: Photo 2 */}
-            <div className="lg:col-span-6 order-3 lg:order-none">
+            {/* 2nd Row: Photo 2 */}
+            <div className="lg:col-span-6 order-3 lg:order-none w-full">
               <motion.div 
                 variants={bookOpenVariants}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, margin: "-30px" }}
                 style={{ transformOrigin: "left center" }}
-                className="transform rotate-2 rounded-2xl"
+                className="transform sm:rotate-2 rounded-2xl w-full"
               >
-                <div className="w-full h-64 sm:h-80 mx-auto overflow-hidden bg-neutral-800 rounded-xl">
+                <div className="w-full h-56 sm:h-80 mx-auto overflow-hidden bg-neutral-800 rounded-xl shadow-lg">
                   <img
                     src="https://i.pinimg.com/736x/c0/13/07/c013072cdef60e34a80bf1abc83c285f.jpg"
                     alt="Festive Feast Celebration"
@@ -244,17 +244,17 @@ export default function BabyShowerMenuCard() {
               </motion.div>
             </div>
 
-            {/* Bottom Left: Photo 3 */}
-            <div className="lg:col-span-6 order-5">
+            {/* 3rd Row: Photo 3 */}
+            <div className="lg:col-span-6 order-5 w-full">
               <motion.div 
                 variants={bookOpenVariants}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, margin: "-30px" }}
                 style={{ transformOrigin: "left center" }}
-                className="transform -rotate-1"
+                className="transform sm:-rotate-1 w-full"
               >
-                <div className="w-full h-64 sm:h-80 mx-auto overflow-hidden bg-neutral-800 rounded-xl">
+                <div className="w-full h-56 sm:h-80 mx-auto overflow-hidden bg-neutral-800 rounded-xl shadow-lg">
                   <img
                     src="https://i.pinimg.com/originals/f8/68/1f/f8681ff45012d142abb0be256bc12435.jpg"
                     alt="Moments of Joy and Gratitude"
@@ -264,14 +264,14 @@ export default function BabyShowerMenuCard() {
               </motion.div>
             </div>
 
-            {/* Bottom Right: Text 3 */}
-            <div className="lg:col-span-6 text-left px-2 order-6">
+            {/* 3rd Row: Text 3 */}
+            <div className="lg:col-span-6 text-left px-1 sm:px-2 order-6 w-full">
               <motion.h3 
                 variants={sentenceVariants}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
-                className="font-sans font-bold text-2xl text-amber-300 mb-2 flex flex-wrap gap-x-1.5"
+                className="font-sans font-bold text-xl sm:text-2xl text-amber-300 mb-2 flex flex-wrap gap-x-1.5"
               >
                 {"Moments of Joy and Love".split(" ").map((word, wIdx) => (
                   <span key={wIdx} className="inline-flex">
@@ -307,7 +307,7 @@ export default function BabyShowerMenuCard() {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
-                className="font-serif italic text-sm text-[#C89B7B] flex flex-wrap gap-x-1"
+                className="font-serif italic text-xs sm:text-sm text-[#C89B7B] flex flex-wrap gap-x-1"
               >
                 {"Love | Memories | Happiness".split(" ").map((word, wIdx) => (
                   <span key={wIdx} className="inline-flex">
@@ -326,9 +326,13 @@ export default function BabyShowerMenuCard() {
         </div>
 
       </section>
+      
       <BabyShowerScrapbookSection/>
      
-      <WeddingDriftGallery/>
+     {/* Mobile-friendly Wrapper for Drift Gallery */}
+     <div className="w-full h-[50vh] sm:h-screen relative overflow-hidden">
+       <WeddingDriftGallery/>
+     </div>
     </>
   );
 }

@@ -13,11 +13,9 @@ const HomeClient = () => {
       <div className="fixed inset-0 pointer-events-none z-0">
         <StarfieldCursor />
       </div>
-
-      
       <div className="relative z-10 bg-transparent">
         <HeroSection />
-        <PhotoAboutSection />
+       
       </div>
       
     </div>

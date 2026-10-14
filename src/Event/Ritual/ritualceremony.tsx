@@ -9,7 +9,7 @@ import WeddingDriftGallery from "../Prewedd";
 export default function RitualCeremonyCard() {
   const subHeadingText = "Sacred Tradition";
   const paragraphText =
-    "Traditional morning rituals, sacred offerings, and cherished moments shared with family have been the true highlights of this celebration.";
+    "Traditional morning rituals, sacred offerings, and cherished moments shared with family have been the true highlights of this celebration.Tamil Nadu features a rich tapestry of traditional rituals and ceremonies that mark key life stages, spiritual devotion, and community events";
 
   // Text container variant for staggered letter animation
   const containerVariants: Variants = {
@@ -52,14 +52,12 @@ export default function RitualCeremonyCard() {
     <StarfieldCursor/>
     <section className="relative w-full bg-transparent text-white flex flex-col justify-center items-center px-6 sm:px-12 py-20 overflow-hidden">
       {/* Main Container Layout */}
-      <div className="w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mt-10">
+      <div className="w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mt-5">
         
         {/* Left Side: Journal-style Text Box with Letter Animations */}
-        <div className="lg:col-span-5 text-left p-8 rounded-3xl">
-          
-          {/* Subheading Letter Animation */}
+        <div className="lg:col-span-3 text-left p-3 rounded-3xl">
           <motion.span
-            className="text-xs uppercase tracking-[0.4em] font-bold text-[#C89B7B] block mb-3 flex flex-wrap"
+            className="text-xl uppercase tracking-[0.4em] font-sans italic text-white block mb-4 flex flex-wrap"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
@@ -81,7 +79,7 @@ export default function RitualCeremonyCard() {
 
           {/* Paragraph Letter Animation */}
           <motion.p
-            className="text-sm text-orange-300 font-medium leading-relaxed mb-4 flex flex-wrap"
+            className="text-md text-amber-300 font-medium leading-relaxed mb-4 flex flex-wrap"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"

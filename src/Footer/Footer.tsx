@@ -142,13 +142,13 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar: Copyright & Legal */}
-        <div className="pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-zinc-400 space-y-4 md:space-y-0 border-t border-zinc-800">
+        <div className="pt-8 flex flex-col md:flex-row items-center justify-between text-xs bg-black text-zinc-400 space-y-4 md:space-y-0 border-t border-zinc-800">
           <div className="flex items-center space-x-2">
             <Link href="#">
               <img
-                src={picture}
+                src="https://lh3.googleusercontent.com/a-/ALV-UjWuNSSygjVnMRvK5En3_2btsw-3vJaVXHcZtqSxl-mBhiDQYzQ=s100-p-k-no-mo"
                 alt="Genzzi Logo"
-                className="h-10 w-auto object-contain filter brightness-0 invert"
+                className="h-10 w-auto object-contain filter bg-black text-black invert"
               />
             </Link>
             <span className="text-white font-sans italic">
